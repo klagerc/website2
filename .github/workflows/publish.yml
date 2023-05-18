@@ -22,6 +22,10 @@ jobs:
         with:
           r-version: '4.3.0'
 
+      - name: Install rmarkdown
+        run: |-
+          Rscript -e "install.packages(c('rmarkdown'), repos = 'https://demo.rstudiopm.com/all/__linux__/bionic/latest')"
+          
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
         with:
